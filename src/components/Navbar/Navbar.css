@@ -1,4 +1,4 @@
-.Navbar{
+/* .Navbar{
   display: flex;
   flex-direction: row;
   height: 4rem;
@@ -54,4 +54,232 @@ select option { color: white; }
 }
 .identicon{
   margin-left: 0.5rem;
+} */
+
+/* 
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #1abc9c, #3498db);
+  color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.nav_name {
+  display: flex;
+  align-items: center;
+}
+
+.nav_name h2 {
+  margin-left: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav_name h2:hover {
+  color: #f1c40f;
+  cursor: pointer;
+}
+
+.nav_name img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.nav_networkselector select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  color: #2c3e50;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav_networkselector select:hover {
+  transform: translateY(-2px);
+}
+
+.nav_balance {
+  display: flex;
+  align-items: center;
+}
+
+.nav_mybalance {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav_balance-box {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav_balance-box:hover {
+  background-color: #e67e22;
+  transform: translateY(-3px);
+} */
+
+
+
+
+
+
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  background: linear-gradient(90deg, #1abc9c, #3498db); /* Gradient background */
+   color:white;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+ }
+
+.nav__name {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.nav__name h2 {
+  margin-left: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav__name h2:hover {
+  color: #f1c40f; 
+  cursor: pointer;
+}
+
+
+.nav__name img {
+  padding: 2rem;
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  
+}
+
+.nav__networkSelector select {
+  padding: 0.5rem 1rem; 
+  width: 150px; 
+  border-radius: 0.4em;
+  border: none;
+  margin: 2rem;
+  background-color: white;
+  color: #2c3e50; 
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+
+
+.nav__networkSelector select {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.4em;
+  border: none;
+  margin: 2rem;
+  background-color: white;
+  color: #2c3e50; 
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav__networkSelector select:hover {
+  transform: translateY(-2px);
+}
+
+.nav__balance {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px; 
+}
+
+.nav__balance-box {
+  background-color: #f39c12; 
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 2rem;
+  flex: 1;
+  height: 2.5rem;
+  margin: 2rem 4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav__balance-box:hover {
+  background-color: #e67e22;
+  transform: translateY(-3px);
+}
+
+select option {
+  color:Black;
+}
+
+.nav__myBalance {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav__myAccount {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25%; 
+}
+
+
+.gender-text {
+  color: #333; }
+
+.identicon {
+  margin-left: 0.5rem;
+}  
+
+
+
+
+

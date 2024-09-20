@@ -5,7 +5,7 @@ const Form = () => {
     return (
         <div className='login-container'>
             <form>
-                <h1>Patient Details</h1>
+                <h1>Patient Record </h1>
                 <label htmlFor='name'>Patient Name:</label>
                 <input type='text' id='name' name='name' placeholder='John Smith' required />
 
@@ -20,8 +20,8 @@ const Form = () => {
                     <option value='Other'>Other</option>
                 </select>
 
-                <label htmlFor='address'>Address:</label>
-                <input type='text' id='address' name='address' placeholder='Washington DC' required />
+                {/* <label htmlFor='address'>Address:</label>
+                <input type='text' id='address' name='address' placeholder='Washington DC' required /> */}
 
                 <label htmlFor='bloodtype'>Blood type:</label>
                 <input type='text' id='bloodtype' name='bloodtype' placeholder='B positive' required />
