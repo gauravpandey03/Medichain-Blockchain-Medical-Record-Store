@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+//import Form from './components/Form/Form';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import {loadProvider,loadNetwork } from './store/interactions';
 
 function App() {
+ const dispatch=useDispatch();
+const loadBlockchainDate=async()=>{
+ const provider=loadProvider(dispatch);
+ console.log(provider);
+ const chainId=await loadNetwork(provider,dispatch);
+};
+
+ useEffect(()=>{
+  loadBlockchainDate();
+ });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className='App'> <Navbar/>
+   </div>
   );
 }
 
