@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-//import MEDICAL_ABI from "../abis/MedicalRecords.json";
+import MEDICAL_ABI from "../abis/MedicalRecords.json";
 export const loadProvider = (dispatch) => {
   const connection = new ethers.providers.Web3Provider(window.ethereum);
   dispatch({ type: "PROVIDER_LOADED", connection });
@@ -20,4 +20,37 @@ export const loadAccount = async (provider, dispatch) => {
   balance = ethers.utils.formatEther(balance);
   dispatch({ type: "ETHER_BALANCE_LOADED", balance });
   return account;
+};
+
+export const loadMedical = (provider, address, dispatch) => {
+  const medical = new ethers.Contract(address, MEDICAL_ABI, provider);
+  dispatch({ type: "MEDICAL_LOADED", medical });
+  return medical;
+};
+
+export const submitRecord = async (
+  name,
+  age,
+  gender,
+  bloodType,
+  allergies,
+  diagnosis,
+  treatment,
+  provider,
+  medical,
+  dispatch
+) => {
+  let transaction;
+  dispatch({ type: "NEW_RECORD_LOADED" });
+  try {
+    const signer = await provider.getSigner();
+
+    transaction = await medical
+      .connect(signer)
+      .addRecord(name, age, gender, bloodType, allergies, diagnosis, treatment);
+
+    await transaction.wait();
+  } catch (error) {
+    dispatch({ type: "NEW_RECORD_FAIL" });
+ }
 };

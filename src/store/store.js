@@ -3,9 +3,9 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 /* Import Reducers */
-import { provider } from "./reducer";
+import { provider,medical } from "./reducer";
 
-const reducer = combineReducers({ provider });
+const reducer = combineReducers({ provider,medical });
 
 const initialState = {};
 
