@@ -54,3 +54,43 @@ export const submitRecord = async (
     dispatch({ type: "NEW_RECORD_FAIL" });
  }
 };
+
+
+export const subscribeToEvents = async (medical, dispatch) => {
+  medical.on(
+    "MedicalRecords__AddRecord",
+    (
+      recordId,
+      timestamp,
+      name,
+      age,
+      gender,
+      bloodType,
+      allergies,
+      diagnosis,
+      treatment,
+      event
+    ) => {
+      const medicalOrder = event.args;
+      dispatch({ type: "NEW_RECORD_SUCCESS", medicalOrder, event });
+    }
+  );
+  medical.on(
+    "MedicalRecords__DeleteRecord",
+    (
+      recordId,
+      timestamp,
+      name,
+      age,
+      gender,
+      bloodType,
+      allergies,
+      diagnosis,
+      treatment,
+      event
+    ) => {
+      const deleteOrder = event.args;
+      dispatch({ type: "DELETE_REQUEST_SUCCESS", deleteOrder, event });
+    }
+  );
+};
