@@ -29,3 +29,43 @@ a:hover{
     background-color: #333;
     color: white;
 }
+
+
+
+
+
+.Option {
+    display: flex;
+    background-color: #1abc9c; /* Match navbar background */
+    color: white; /* Text color */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Add shadow for consistency */
+  }
+  
+  .opt__form, .opt__data {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent; /* Border for hover effect */
+    transition: border-color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .opt__form:hover, .opt__data:hover {
+    border-color: white; /* Change border color on hover */
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    color: white; /* Change link color to match the theme */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+  }
+  
+  a:hover {
+    background-color: #3498db; /* Match hover color to navbar */
+    color: white; /* Keep text color white on hover */
+  }
+  

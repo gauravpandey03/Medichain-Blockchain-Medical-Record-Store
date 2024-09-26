@@ -94,3 +94,36 @@ export const subscribeToEvents = async (medical, dispatch) => {
     }
   );
 };
+
+
+export const loadAllData = async (provider, medical, dispatch) => {
+  const block = await provider.getBlockNumber();
+  const medicalStream = await medical.queryFilter(
+    "MedicalRecords__AddRecord",
+    0,
+    block
+  );
+  const medicalRecords = medicalStream.map((event) => event.args);
+  dispatch({ type: "ALL_MEDICAL_RECORDS", medicalRecords });
+  const deleteStream = await medical.queryFilter(
+    "MedicalRecords__DeleteRecord",
+    0,
+    block
+  );
+  const deleteRecords = deleteStream.map((event) => event.args);
+  dispatch({ type: "ALL_DELETED_RECORDS", deleteRecords });
+};
+
+
+
+export const deleteData = async (medical, recordId, dispatch, provider) => {
+  let transaction;
+  dispatch({ type: "DELETE_REQUEST_INNITIALIZED" });
+  try {
+    const signer = await provider.getSigner();
+    transaction = await medical.connect(signer).deleteRecord(recordId);
+    await transaction.wait();
+  } catch (error) {
+    dispatch({ type: "DELETE_REQUEST_FAILED" });
+  }
+};

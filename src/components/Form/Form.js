@@ -24,13 +24,13 @@ const Form = () => {
         dispatch
      );
     console.log(name);
-    //   setName(0);
-    //   setAge(0);
-    //   setGender(0);
-    //   setBloodType(0);
-    //   setAllergies(0);
-    //   setDiagnosis(0);
-    //   setTreatment(0);
+      setName(0);
+      setAge(0);
+      setGender(0);
+      setBloodType(0);
+      setAllergies(0);
+      setDiagnosis(0);
+      setTreatment(0);
      };
     const [name, setName] = useState(0);
     const [age, setAge] = useState(0);
@@ -46,7 +46,7 @@ const Form = () => {
             {account ? (
             <form onSubmit={submitHandler}>
                 <h1>Patient Record </h1>
-                <label htmlFor='name'>Patient Record</label>
+                <label htmlFor='name'>Patient Name:</label>
                 <input
           type="text"
           id="name"
@@ -54,7 +54,7 @@ const Form = () => {
           value={name === 0 ? "" : name}
           onChange={(e) => setName(e.target.value)}
           required
-          placeholder="Aman Dhattarwal"
+          placeholder="Aman "
         />
 
                 <label htmlFor='age'>Age:</label>
@@ -63,7 +63,7 @@ const Form = () => {
           id="age"
           name="age"
           required
-          placeholder="29"
+          placeholder="18"
           value={age === 0 ? "" : age}
           onChange={(e) => setAge(e.target.value)}
         />
@@ -95,7 +95,7 @@ const Form = () => {
           onChange={(e) => setBloodType(e.target.value)}
         />
 
-         <label htmlFor='allergies'>Allergies:</label>
+         <label htmlFor='allergies'>Health Concern:</label>
         <input
           type="text"
           id="name"

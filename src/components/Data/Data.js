@@ -2,7 +2,7 @@ import React from "react";
 import "./Data.css";
 import { dataBookSelector } from "../../store/selectors";
 import { useDispatch, useSelector } from "react-redux";
-//import { deleteData } from "../../store/interactions";
+import { deleteData } from "../../store/interactions";
 
 const Data = () => {
   const orderData = useSelector(dataBookSelector);
@@ -12,7 +12,7 @@ const Data = () => {
   const dispatch = useDispatch();
   const deleteHandler = (e, data) => {
     if (window.confirm("Do you want to delete the record?")) {
-      //deleteData(medical, data.recordId, dispatch, provider);
+      deleteData(medical, data.recordId, dispatch, provider);
     } else {
       console.log("Data not delete");
     }
@@ -25,12 +25,12 @@ const Data = () => {
             <thead>
               <tr>
                 <th>Record ID</th>
-                <th>Data and Time</th>
+                <th>Time and Date </th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Gender</th>
                 <th>Blood Type</th>
-                <th>Allergies</th>
+                <th>Concern</th>
                 <th>Diagnosis</th>
                 <th>Treatment</th>
 
