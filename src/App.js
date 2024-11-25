@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {loadProvider,loadNetwork, loadMedical, subscribeToEvents, loadAllData, loadAccount } from './store/interactions';
 import  config  from "./config.json";
+import { Alert } from './components';
 function App() {
  const dispatch=useDispatch();
 const loadBlockchainDate=async()=>{
@@ -42,7 +43,7 @@ subscribeToEvents(medical,dispatch);
     <Route path="/" exact element={<Form/>} />
     <Route path="/Data" exact element={<Data/>} />
    </Routes>
-   
+   <Alert/>
    </div>
   );
 }
